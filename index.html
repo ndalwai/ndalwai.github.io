@@ -21,24 +21,22 @@
       background: linear-gradient(rgba(0, 0, 60, 0.75), rgba(0, 0, 60, 0.75)), url('hero.jpg') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 140px 20px 100px;
+      padding: 90px 20px 60px;          /* Much smaller vertical space */
       background-attachment: scroll;
-      min-height: 40vh;
     }
     header h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
+      font-size: 3.2rem;
+      margin-bottom: 12px;
       font-weight: 700;
-      letter-spacing: -0.5px;
     }
     header p {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       max-width: 900px;
       margin: 0 auto;
       opacity: 0.95;
     }
     .container {
-      max-width: 1450px;              /* wider overall container */
+      max-width: 1400px;
       margin: 0 auto 80px;
       padding: 0 25px;
       flex: 1;
@@ -46,36 +44,36 @@
     .columns {
       display: flex;
       flex-wrap: wrap;
-      gap: 60px;                      /* bigger separation between cards */
-      margin-top: 60px;
+      gap: 50px;
+      margin-top: -80px;                /* ← Pulls cards up into the hero area */
       margin-bottom: 60px;
     }
     .column {
-      flex: 1 1 480px;                /* ← key change: minimum width increased → cards get wider */
+      flex: 1 1 480px;                  /* Wider cards */
       min-width: 0;
       background: white;
       border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-      padding: 50px 45px;             /* more comfortable inner padding */
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      padding: 50px 45px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .column:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.18);
     }
     .column h2 {
       color: #003366;
-      font-size: 2.6rem;
-      margin-bottom: 35px;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
       border-bottom: 4px solid #e8f0fe;
-      padding-bottom: 15px;
+      padding-bottom: 12px;
     }
     ul {
       list-style: none;
       padding: 0;
     }
     li {
-      margin: 28px 0;
+      margin: 26px 0;
       padding: 22px 28px;
       background: #f9fbff;
       border-radius: 12px;
@@ -109,30 +107,31 @@
       text-decoration: none;
     }
 
-    /* Side-by-side only on wider screens */
-    @media (min-width: 980px) {           /* ← raised breakpoint → stacks longer on tablets */
-      .column { flex: 1; }                /* grow to fill available space */
-      header { padding: 180px 40px 140px; }
-      header h1 { font-size: 4.2rem; }
-      header p { font-size: 1.6rem; }
-      .columns { gap: 70px; margin-top: 80px; }
-      .column { padding: 55px 50px; }
+    /* Desktop – side-by-side + adjustments */
+    @media (min-width: 980px) {
+      header { padding: 110px 40px 70px; }
+      header h1 { font-size: 4rem; }
+      header p { font-size: 1.5rem; }
+      .columns { margin-top: -120px; gap: 60px; }  /* Stronger pull-up on desktop */
+      .column { padding: 60px 55px; }
     }
 
+    /* Mobile / tablet – stack + less aggressive pull */
     @media (max-width: 979px) {
       .columns { 
         flex-direction: column; 
-        gap: 50px; 
-        margin-top: 50px; 
+        gap: 45px; 
+        margin-top: -50px;          /* Mild pull-up on smaller screens */
       }
+      .column { padding: 45px 35px; }
     }
 
     @media (max-width: 480px) {
-      header { padding: 100px 15px 70px; min-height: auto; }
-      header h1 { font-size: 2.6rem; }
-      header p { font-size: 1.15rem; }
+      header { padding: 80px 15px 50px; }
+      header h1 { font-size: 2.5rem; }
+      header p { font-size: 1.1rem; }
+      .columns { margin-top: -40px; gap: 40px; }
       .column { padding: 40px 30px; }
-      .columns { margin-top: 40px; gap: 40px; }
       li a { font-size: 1.2rem; }
     }
   </style>
