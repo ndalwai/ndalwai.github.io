@@ -21,31 +21,34 @@
       background: linear-gradient(rgba(0, 0, 60, 0.75), rgba(0, 0, 60, 0.75)), url('hero.jpg') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 120px 15px 80px; /* Increased bottom padding for space below text */
+      padding: 140px 20px 100px;          /* More top/bottom space – adjust if image has empty areas */
       background-attachment: scroll;
+      min-height: 40vh;                   /* Ensures header doesn't collapse too much */
     }
     header h1 {
-      font-size: 3.2rem;
-      margin-bottom: 12px;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
       font-weight: 700;
+      letter-spacing: -0.5px;
     }
     header p {
-      font-size: 1.3rem;
-      max-width: 800px;
+      font-size: 1.4rem;
+      max-width: 900px;
       margin: 0 auto;
+      opacity: 0.95;
     }
     .container {
       max-width: 1300px;
-      margin: 0 auto 60px; /* No negative top margin – natural flow */
-      padding: 0 15px;
+      margin: 0 auto 80px;
+      padding: 0 20px;
       flex: 1;
     }
     .columns {
       display: flex;
       flex-wrap: wrap;
-      gap: 40px;
-      margin-top: 40px; /* Adds space after header – adjust this value to control gap */
-      margin-bottom: 50px;
+      gap: 50px;
+      margin-top: 60px;                   /* This controls the main gap below header – key for spacing */
+      margin-bottom: 60px;
     }
     .column {
       flex: 1 1 100%;
@@ -53,7 +56,7 @@
       background: white;
       border-radius: 16px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-      padding: 40px 30px;
+      padding: 45px 35px;                 /* Slightly more inner space */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .column:hover {
@@ -62,18 +65,18 @@
     }
     .column h2 {
       color: #003366;
-      font-size: 2.4rem;
-      margin-bottom: 30px;
+      font-size: 2.6rem;
+      margin-bottom: 35px;
       border-bottom: 4px solid #e8f0fe;
-      padding-bottom: 12px;
+      padding-bottom: 15px;
     }
     ul {
       list-style: none;
       padding: 0;
     }
     li {
-      margin: 24px 0;
-      padding: 20px 25px;
+      margin: 28px 0;
+      padding: 22px 28px;
       background: #f9fbff;
       border-radius: 12px;
       border-left: 6px solid #0066cc;
@@ -87,7 +90,7 @@
       color: #004080;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       display: block;
     }
     li a:hover {
@@ -97,29 +100,29 @@
       background: #002244;
       color: #d0e0ff;
       text-align: center;
-      padding: 40px 15px;
-      font-size: 1rem;
+      padding: 50px 20px;
+      font-size: 1.05rem;
       margin-top: auto;
     }
     footer a {
       color: #66aaff;
       text-decoration: none;
     }
-    /* Larger screens */
+    /* Desktop/large screens */
     @media (min-width: 769px) {
-      header { padding: 160px 20px 120px; } /* More bottom space on desktop */
-      header h1 { font-size: 3.8rem; }
-      header p { font-size: 1.5rem; }
-      .column { flex: 1; padding: 50px 45px; }
-      .columns { gap: 50px; margin-top: 60px; } /* Bigger gap on desktop */
+      header { padding: 180px 30px 140px; }  /* Even more generous on desktop */
+      header h1 { font-size: 4.2rem; }
+      header p { font-size: 1.6rem; }
+      .column { flex: 1; padding: 55px 50px; }
+      .columns { gap: 60px; margin-top: 80px; }
     }
     @media (max-width: 480px) {
-      header { padding: 80px 15px 60px; }
-      header h1 { font-size: 2.4rem; }
-      header p { font-size: 1.1rem; }
-      .column { padding: 30px 20px; }
-      .columns { margin-top: 30px; }
-      li a { font-size: 1.15rem; }
+      header { padding: 100px 15px 70px; min-height: auto; }
+      header h1 { font-size: 2.6rem; }
+      header p { font-size: 1.15rem; }
+      .column { padding: 35px 25px; }
+      .columns { margin-top: 40px; gap: 35px; }
+      li a { font-size: 1.2rem; }
     }
   </style>
 </head>
