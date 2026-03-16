@@ -21,9 +21,9 @@
       background: linear-gradient(rgba(0, 0, 60, 0.75), rgba(0, 0, 60, 0.75)), url('hero.jpg') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 140px 20px 100px;          /* More top/bottom space – adjust if image has empty areas */
+      padding: 140px 20px 100px;
       background-attachment: scroll;
-      min-height: 40vh;                   /* Ensures header doesn't collapse too much */
+      min-height: 40vh;
     }
     header h1 {
       font-size: 3.5rem;
@@ -38,25 +38,25 @@
       opacity: 0.95;
     }
     .container {
-      max-width: 1300px;
+      max-width: 1450px;              /* wider overall container */
       margin: 0 auto 80px;
-      padding: 0 20px;
+      padding: 0 25px;
       flex: 1;
     }
     .columns {
       display: flex;
       flex-wrap: wrap;
-      gap: 50px;
-      margin-top: 60px;                   /* This controls the main gap below header – key for spacing */
+      gap: 60px;                      /* bigger separation between cards */
+      margin-top: 60px;
       margin-bottom: 60px;
     }
     .column {
-      flex: 1 1 100%;
+      flex: 1 1 480px;                /* ← key change: minimum width increased → cards get wider */
       min-width: 0;
       background: white;
       border-radius: 16px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-      padding: 45px 35px;                 /* Slightly more inner space */
+      padding: 50px 45px;             /* more comfortable inner padding */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .column:hover {
@@ -108,20 +108,31 @@
       color: #66aaff;
       text-decoration: none;
     }
-    /* Desktop/large screens */
-    @media (min-width: 769px) {
-      header { padding: 180px 30px 140px; }  /* Even more generous on desktop */
+
+    /* Side-by-side only on wider screens */
+    @media (min-width: 980px) {           /* ← raised breakpoint → stacks longer on tablets */
+      .column { flex: 1; }                /* grow to fill available space */
+      header { padding: 180px 40px 140px; }
       header h1 { font-size: 4.2rem; }
       header p { font-size: 1.6rem; }
-      .column { flex: 1; padding: 55px 50px; }
-      .columns { gap: 60px; margin-top: 80px; }
+      .columns { gap: 70px; margin-top: 80px; }
+      .column { padding: 55px 50px; }
     }
+
+    @media (max-width: 979px) {
+      .columns { 
+        flex-direction: column; 
+        gap: 50px; 
+        margin-top: 50px; 
+      }
+    }
+
     @media (max-width: 480px) {
       header { padding: 100px 15px 70px; min-height: auto; }
       header h1 { font-size: 2.6rem; }
       header p { font-size: 1.15rem; }
-      .column { padding: 35px 25px; }
-      .columns { margin-top: 40px; gap: 35px; }
+      .column { padding: 40px 30px; }
+      .columns { margin-top: 40px; gap: 40px; }
       li a { font-size: 1.2rem; }
     }
   </style>
