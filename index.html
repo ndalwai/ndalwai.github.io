@@ -22,45 +22,45 @@
       background: linear-gradient(rgba(0, 0, 60, 0.75), rgba(0, 0, 60, 0.75)), url('hero.jpg') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 90px 20px 60px;
+      padding: 100px 20px 70px;       /* balanced header height */
       background-attachment: scroll;
     }
 
     header h1 {
-      font-size: 3.2rem;
-      margin-bottom: 12px;
+      font-size: 3.4rem;
+      margin-bottom: 16px;
       font-weight: 700;
     }
 
     header p {
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       max-width: 900px;
       margin: 0 auto;
       opacity: 0.95;
     }
 
     .container {
-      max-width: 1400px;
+      max-width: 1520px;               /* wider container → cards can be broader */
       margin: 0 auto 80px;
-      padding: 0 25px;
+      padding: 0 30px;
       flex: 1;
     }
 
     .columns {
       display: flex;
       flex-wrap: wrap;
-      gap: 50px;
-      margin-top: -60px;           /* pulls cards up closer to hero */
+      gap: 60px;                       /* good separation */
+      margin-top: 20px;                /* positive margin – no overlap with text */
       margin-bottom: 60px;
     }
 
     .column {
-      flex: 1 1 480px;             /* wider cards – they grow to fill space */
+      flex: 1 1 520px;                 /* wider minimum width → noticeably broader cards */
       min-width: 0;
       background: white;
       border-radius: 16px;
       box-shadow: 0 10px 35px rgba(0,0,0,0.1);
-      padding: 50px 45px;
+      padding: 55px 50px;              /* more comfortable inner space */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -71,10 +71,10 @@
 
     .column h2 {
       color: #003366;
-      font-size: 2.5rem;
-      margin-bottom: 30px;
+      font-size: 2.6rem;
+      margin-bottom: 35px;
       border-bottom: 4px solid #e8f0fe;
-      padding-bottom: 12px;
+      padding-bottom: 14px;
     }
 
     ul {
@@ -83,8 +83,8 @@
     }
 
     li {
-      margin: 26px 0;
-      padding: 22px 28px;
+      margin: 28px 0;
+      padding: 24px 30px;
       background: #f9fbff;
       border-radius: 12px;
       border-left: 6px solid #0066cc;
@@ -100,7 +100,7 @@
       color: #004080;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       display: block;
     }
 
@@ -122,59 +122,32 @@
       text-decoration: none;
     }
 
-    /* Desktop – side by side */
+    /* Desktop – side-by-side + wider feel */
     @media (min-width: 980px) {
-      header {
-        padding: 110px 40px 70px;
-      }
-      header h1 {
-        font-size: 4rem;
-      }
-      header p {
-        font-size: 1.5rem;
-      }
-      .columns {
-        margin-top: -100px;      /* stronger pull-up on larger screens */
-        gap: 60px;
-      }
-      .column {
-        flex: 1;                 /* grow fully side-by-side */
-        padding: 60px 55px;
-      }
+      header { padding: 120px 40px 80px; }
+      header h1 { font-size: 4.2rem; }
+      header p { font-size: 1.6rem; }
+      .columns { margin-top: 30px; gap: 70px; }   /* controlled spacing */
+      .column { flex: 1; padding: 65px 60px; }    /* extra inner width */
     }
 
-    /* Mobile / smaller screens – stack vertically */
+    /* Mobile / tablet – stack */
     @media (max-width: 979px) {
-      .columns {
-        flex-direction: column;
-        gap: 50px;
-        margin-top: -50px;
+      .columns { 
+        flex-direction: column; 
+        gap: 50px; 
+        margin-top: 30px;
       }
-      .column {
-        padding: 45px 35px;
-      }
+      .column { padding: 50px 40px; }
     }
 
     @media (max-width: 480px) {
-      header {
-        padding: 80px 15px 50px;
-      }
-      header h1 {
-        font-size: 2.5rem;
-      }
-      header p {
-        font-size: 1.1rem;
-      }
-      .columns {
-        margin-top: -40px;
-        gap: 40px;
-      }
-      .column {
-        padding: 40px 30px;
-      }
-      li a {
-        font-size: 1.2rem;
-      }
+      header { padding: 80px 15px 50px; }
+      header h1 { font-size: 2.6rem; }
+      header p { font-size: 1.15rem; }
+      .columns { margin-top: 25px; gap: 40px; }
+      .column { padding: 45px 35px; }
+      li a { font-size: 1.25rem; }
     }
   </style>
 </head>
@@ -191,7 +164,7 @@
         <h2>Newsletters</h2>
         <ul>
           <li><a href="newsletter/IDWALA.pdf" target="_blank">March 2026 Newsletter (PDF)</a></li>
-          <!-- Add more items here -->
+          <!-- Add more -->
         </ul>
       </div>
 
@@ -199,7 +172,7 @@
         <h2>Job Listings</h2>
         <ul>
           <li><a href="jobs/Vacancy - Contracts Manager 2026.pdf" target="_blank">Contracts Manager (PG8)</a></li>
-          <!-- Add more items here -->
+          <!-- Add more -->
         </ul>
       </div>
     </div>
