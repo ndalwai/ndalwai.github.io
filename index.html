@@ -2,32 +2,144 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Newsletters & Jobs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idwala Lime Distributors - Newsletters & Job Listings</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; }
-    h1, h2 { text-align: center; }
-    ul { list-style: none; padding: 0; }
-    li { margin: 20px 0; padding: 15px; background: #f0f0f0; border-radius: 8px; }
-    a { color: #0066cc; text-decoration: none; font-weight: bold; }
-    a:hover { text-decoration: underline; }
+    /* Reset and base styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa; /* light gray like industrial sites */
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header / Hero section - inspired by Idwala's banner style */
+    header {
+      background: linear-gradient(rgba(0, 0, 50, 0.7), rgba(0, 0, 50, 0.7)), url('https://images.unsplash.com/photo-1581092160560-1c1e428e9d65?auto=format&fit=crop&q=80') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px 80px;
+      background-attachment: fixed; /* subtle parallax feel */
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    header p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* Main content container */
+    .container {
+      max-width: 1100px;
+      margin: -60px auto 60px;
+      padding: 0 20px;
+    }
+
+    /* Sections - card-like with subtle shadows */
+    section {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+    section h2 {
+      color: #004080; /* dark blue/navy like corporate headers */
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      border-bottom: 3px solid #e0e0e0;
+      padding-bottom: 12px;
+    }
+
+    /* List of items - nicer cards */
+    ul {
+      list-style: none;
+    }
+    li {
+      margin: 20px 0;
+      padding: 18px 25px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 5px solid #0066cc; /* accent blue */
+      transition: all 0.2s ease;
+    }
+    li:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    li a {
+      color: #004080;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    li a:hover {
+      color: #0066cc;
+      text-decoration: underline;
+    }
+
+    /* Footer - simple corporate */
+    footer {
+      background: #003366; /* deep navy */
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.95rem;
+    }
+    footer a {
+      color: #66ccff;
+      text-decoration: none;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      header { padding: 70px 15px 50px; }
+      header h1 { font-size: 2.2rem; }
+      section { padding: 30px 20px; }
+    }
   </style>
 </head>
 <body>
 
-  <h1>Welcome To Idwala</h1>
-  <p style="text-align:center;">Newsletters and Job Listings</p>
+  <header>
+    <h1>Idwala Lime Distributors</h1>
+    <p>Newsletters and Job Listings – Danielskuil, Northern Cape</p>
+  </header>
 
-  <h2>Newsletters</h2>
-  <ul>
-    <li><a href="newsletter/IDWALA.pdf" target="_blank">March 2026 Newsletter (PDF)</a></li>
-    <!-- Add more like this later -->
-  </ul>
+  <div class="container">
 
-  <h2>Job Listings</h2>
-  <ul>
-    <li><a href="jobs/Vacancy - Contracts Manager 2026.pdf" target="_blank">CONTRACTS MANAGER (PG08)</a></li>
-    <!-- Add more like this later -->
-  </ul>
+    <section id="newsletters">
+      <h2>Newsletters</h2>
+      <ul>
+        <li><a href="newsletter/IDWALA.pdf" target="_blank">March 2026 Newsletter (PDF)</a></li>
+        <!-- Add more here, e.g.:
+        <li><a href="newsletter/April 2026 Newsletter.pdf" target="_blank">April 2026 Newsletter (PDF) - Added [Date]</a></li>
+        -->
+      </ul>
+    </section>
+
+    <section id="jobs">
+      <h2>Job Listings</h2>
+      <ul>
+        <li><a href="jobs/Vacancy - Contracts Manager 2026.pdf" target="_blank">Software Developer Position (PDF)</a></li>
+        <!-- Add more here -->
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Idwala Lime Distributors (Pty) Ltd | Danielskuil, Northern Cape | Part of Idwala Industrial Holdings</p>
+    <p><a href="https://www.idwala.co.za/" target="_blank">Visit Main Website</a></p>
+  </footer>
 
 </body>
 </html>
+
+ 
