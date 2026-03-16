@@ -21,8 +21,8 @@
       background: linear-gradient(rgba(0, 0, 60, 0.75), rgba(0, 0, 60, 0.75)), url('hero.jpg') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 100px 15px 60px; /* Reduced for mobile */
-      background-attachment: scroll; /* Better mobile performance */
+      padding: 120px 15px 80px; /* Increased bottom padding for space below text */
+      background-attachment: scroll;
     }
     header h1 {
       font-size: 3.2rem;
@@ -36,7 +36,7 @@
     }
     .container {
       max-width: 1300px;
-      margin: -60px auto 60px;
+      margin: 0 auto 60px; /* No negative top margin – natural flow */
       padding: 0 15px;
       flex: 1;
     }
@@ -44,10 +44,11 @@
       display: flex;
       flex-wrap: wrap;
       gap: 40px;
+      margin-top: 40px; /* Adds space after header – adjust this value to control gap */
       margin-bottom: 50px;
     }
     .column {
-      flex: 1 1 100%;           /* Full width on small screens */
+      flex: 1 1 100%;
       min-width: 0;
       background: white;
       border-radius: 16px;
@@ -104,18 +105,20 @@
       color: #66aaff;
       text-decoration: none;
     }
-    /* Larger screens: side-by-side columns + bigger header */
+    /* Larger screens */
     @media (min-width: 769px) {
-      header { padding: 140px 20px 100px; }
+      header { padding: 160px 20px 120px; } /* More bottom space on desktop */
       header h1 { font-size: 3.8rem; }
       header p { font-size: 1.5rem; }
       .column { flex: 1; padding: 50px 45px; }
-      .columns { gap: 50px; }
+      .columns { gap: 50px; margin-top: 60px; } /* Bigger gap on desktop */
     }
     @media (max-width: 480px) {
+      header { padding: 80px 15px 60px; }
       header h1 { font-size: 2.4rem; }
       header p { font-size: 1.1rem; }
       .column { padding: 30px 20px; }
+      .columns { margin-top: 30px; }
       li a { font-size: 1.15rem; }
     }
   </style>
