@@ -9,18 +9,18 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f9fa; /* light gray like industrial sites */
+      background-color: #f8f9fa;
       color: #333;
       line-height: 1.6;
     }
 
-    /* Header / Hero section - inspired by Idwala's banner style */
+    /* Header / Hero */
     header {
       background: linear-gradient(rgba(0, 0, 50, 0.7), rgba(0, 0, 50, 0.7)), url('https://images.unsplash.com/photo-1581092160560-1c1e428e9d65?auto=format&fit=crop&q=80') center/cover no-repeat;
       color: white;
       text-align: center;
       padding: 100px 20px 80px;
-      background-attachment: fixed; /* subtle parallax feel */
+      background-attachment: fixed;
     }
     header h1 {
       font-size: 3rem;
@@ -34,30 +34,40 @@
       opacity: 0.9;
     }
 
-    /* Main content container */
+    /* Main container */
     .container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: -60px auto 60px;
       padding: 0 20px;
     }
 
-    /* Sections - card-like with subtle shadows */
-    section {
+    /* Two-column flex wrapper */
+    .columns {
+      display: flex;
+      flex-wrap: wrap;          /* Allows stacking on small screens */
+      gap: 30px;                /* Space between columns */
+      margin-bottom: 40px;
+    }
+
+    /* Individual section (column) */
+    .column {
+      flex: 1;                  /* Each takes equal space */
+      min-width: 300px;         /* Prevents columns from getting too narrow */
       background: white;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
       padding: 40px;
-      margin-bottom: 40px;
     }
-    section h2 {
-      color: #004080; /* dark blue/navy like corporate headers */
+
+    .column h2 {
+      color: #004080;
       font-size: 2.2rem;
       margin-bottom: 25px;
       border-bottom: 3px solid #e0e0e0;
       padding-bottom: 12px;
     }
 
-    /* List of items - nicer cards */
+    /* List styles */
     ul {
       list-style: none;
     }
@@ -66,7 +76,7 @@
       padding: 18px 25px;
       background: #f8f9fa;
       border-radius: 8px;
-      border-left: 5px solid #0066cc; /* accent blue */
+      border-left: 5px solid #0066cc;
       transition: all 0.2s ease;
     }
     li:hover {
@@ -84,9 +94,9 @@
       text-decoration: underline;
     }
 
-    /* Footer - simple corporate */
+    /* Footer */
     footer {
-      background: #003366; /* deep navy */
+      background: #003366;
       color: white;
       text-align: center;
       padding: 30px 20px;
@@ -97,11 +107,14 @@
       text-decoration: none;
     }
 
-    /* Mobile responsiveness */
+    /* Mobile: stack columns vertically */
     @media (max-width: 768px) {
+      .columns {
+        flex-direction: column;
+      }
       header { padding: 70px 15px 50px; }
       header h1 { font-size: 2.2rem; }
-      section { padding: 30px 20px; }
+      .column { padding: 30px 20px; }
     }
   </style>
 </head>
@@ -114,32 +127,30 @@
 
   <div class="container">
 
-    <section id="newsletters">
-      <h2>Newsletters</h2>
-      <ul>
-        <li><a href="newsletter/IDWALA.pdf" target="_blank">March 2026 Newsletter (PDF)</a></li>
-        <!-- Add more here, e.g.:
-        <li><a href="newsletter/April 2026 Newsletter.pdf" target="_blank">April 2026 Newsletter (PDF) - Added [Date]</a></li>
-        -->
-      </ul>
-    </section>
+    <div class="columns">
+      <div class="column">
+        <h2>Newsletters</h2>
+        <ul>
+          <li><a href="newsletter/March 2026 Newsletter.pdf" target="_blank">March 2026 Newsletter (PDF)</a></li>
+          <!-- Add more <li> here as needed -->
+        </ul>
+      </div>
 
-    <section id="jobs">
-      <h2>Job Listings</h2>
-      <ul>
-        <li><a href="jobs/Vacancy - Contracts Manager 2026.pdf" target="_blank">Software Developer Position (PDF)</a></li>
-        <!-- Add more here -->
-      </ul>
-    </section>
+      <div class="column">
+        <h2>Job Listings</h2>
+        <ul>
+          <li><a href="jobs/Software Developer Position.pdf" target="_blank">Software Developer Position (PDF)</a></li>
+          <!-- Add more <li> here as needed -->
+        </ul>
+      </div>
+    </div>
 
   </div>
 
   <footer>
-    <p>&copy; 2026 Idwala Lime Distributors (Pty) Ltd | Danielskuil, Northern Cape | Part of Idwala Industrial Holdings</p>
+    <p>© 2026 Idwala Lime Distributors (Pty) Ltd | Danielskuil, Northern Cape | Part of Idwala Industrial Holdings</p>
     <p><a href="https://www.idwala.co.za/" target="_blank">Visit Main Website</a></p>
   </footer>
 
 </body>
 </html>
-
- 
