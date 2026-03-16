@@ -22,7 +22,7 @@
       background: linear-gradient(rgba(0, 0, 60, 0.75), rgba(0, 0, 60, 0.75)), url('hero.jpg') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 100px 20px 70px;
+      padding: 100px 20px 70px;       /* balanced header height */
       background-attachment: scroll;
     }
 
@@ -40,7 +40,7 @@
     }
 
     .container {
-      max-width: 1580px;                 /* wider container → cards become broader */
+      max-width: 1520px;               /* wider container → cards can be broader */
       margin: 0 auto 80px;
       padding: 0 30px;
       flex: 1;
@@ -49,18 +49,18 @@
     .columns {
       display: flex;
       flex-wrap: wrap;
-      gap: 60px;
-      margin-top: 30px;                  /* cards a bit lower (more space below hero text) */
+      gap: 60px;                       /* good separation */
+      margin-top: 20px;                /* positive margin – no overlap with text */
       margin-bottom: 60px;
     }
 
     .column {
-      flex: 1 1 560px;                   /* noticeably wider cards */
+      flex: 1 1 520px;                 /* wider minimum width → noticeably broader cards */
       min-width: 0;
       background: white;
       border-radius: 16px;
       box-shadow: 0 10px 35px rgba(0,0,0,0.1);
-      padding: 55px 50px;
+      padding: 55px 50px;              /* more comfortable inner space */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -122,20 +122,21 @@
       text-decoration: none;
     }
 
-    /* Desktop – side-by-side */
+    /* Desktop – side-by-side + wider feel */
     @media (min-width: 980px) {
       header { padding: 120px 40px 80px; }
       header h1 { font-size: 4.2rem; }
       header p { font-size: 1.6rem; }
-      .columns { margin-top: 40px; gap: 70px; }     /* even lower on desktop */
-      .column { flex: 1; padding: 65px 60px; }      /* extra inner width */
+      .columns { margin-top: 30px; gap: 70px; }   /* controlled spacing */
+      .column { flex: 1; padding: 65px 60px; }    /* extra inner width */
     }
 
+    /* Mobile / tablet – stack */
     @media (max-width: 979px) {
       .columns { 
         flex-direction: column; 
         gap: 50px; 
-        margin-top: 35px;
+        margin-top: 30px;
       }
       .column { padding: 50px 40px; }
     }
@@ -144,7 +145,7 @@
       header { padding: 80px 15px 50px; }
       header h1 { font-size: 2.6rem; }
       header p { font-size: 1.15rem; }
-      .columns { margin-top: 30px; gap: 40px; }
+      .columns { margin-top: 25px; gap: 40px; }
       .column { padding: 45px 35px; }
       li a { font-size: 1.25rem; }
     }
