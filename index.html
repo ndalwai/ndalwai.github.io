@@ -5,121 +5,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Idwala Lime Distributors - Newsletters & Job Listings</title>
   <style>
-    /* Key sticky footer setup */
     html, body {
-      height: 100%;               /* Full height for flex to work */
-      margin: 0;                  /* Remove default margins */
+      height: 100%;
+      margin: 0;
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
-      line-height: 1.6;
-      display: flex;              /* Flex column for entire page */
-      flex-direction: column;     /* Stack header → main → footer */
+      background-color: #f5f7fa; /* Softer light gray for more space feel */
+      color: #2c3e50;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Header / Hero - no changes needed here */
     header {
-      background: linear-gradient(rgba(0, 0, 50, 0.7), rgba(0, 0, 50, 0.7)), url('https://images.unsplash.com/photo-1581092160560-1c1e428e9d65?auto=format&fit=crop&q=80') center/cover no-repeat;
+      background: linear-gradient(rgba(0, 0, 60, 0.75), rgba(0, 0, 60, 0.75)), url('https://images.unsplash.com/photo-1581092160560-1c1e428e9d65?auto=format&fit=crop&q=80') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 100px 20px 80px;
+      padding: 140px 20px 100px; /* Taller header for grandeur */
       background-attachment: fixed;
     }
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+      font-size: 3.8rem;
+      margin-bottom: 16px;
       font-weight: 700;
+      letter-spacing: -1px;
     }
     header p {
-      font-size: 1.3rem;
-      max-width: 800px;
+      font-size: 1.5rem;
+      max-width: 900px;
       margin: 0 auto;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
-    /* Main content grows to fill space */
     .container {
-      max-width: 1200px;
-      margin: -60px auto 60px;
-      padding: 0 20px;
-      flex: 1;                    /* This pushes footer down! */
+      max-width: 1300px; /* Wider container */
+      margin: -80px auto 80px;
+      padding: 0 30px;
+      flex: 1;
     }
 
-    /* Two-column flex wrapper */
     .columns {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
-      margin-bottom: 40px;
+      gap: 50px; /* Much bigger gap between columns */
+      margin-bottom: 60px;
     }
 
     .column {
       flex: 1;
-      min-width: 300px;
+      min-width: 380px;
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      padding: 40px;
+      border-radius: 16px; /* Softer, larger rounds */
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1); /* Deeper but softer shadow */
+      padding: 50px 45px; /* Generous inner padding */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .column:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.15);
     }
 
     .column h2 {
-      color: #004080;
-      font-size: 2.2rem;
-      margin-bottom: 25px;
-      border-bottom: 3px solid #e0e0e0;
-      padding-bottom: 12px;
+      color: #003366; /* Deeper navy */
+      font-size: 2.8rem;
+      margin-bottom: 35px;
+      border-bottom: 4px solid #e8f0fe;
+      padding-bottom: 15px;
     }
 
     ul {
       list-style: none;
+      padding: 0;
     }
     li {
-      margin: 20px 0;
-      padding: 18px 25px;
-      background: #f8f9fa;
-      border-radius: 8px;
-      border-left: 5px solid #0066cc;
-      transition: all 0.2s ease;
+      margin: 28px 0;
+      padding: 24px 30px;
+      background: #f9fbff;
+      border-radius: 12px;
+      border-left: 6px solid #0066cc;
+      transition: all 0.25s ease;
     }
     li:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      background: #eef4ff;
+      transform: translateX(8px);
     }
     li a {
       color: #004080;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 1.35rem;
+      display: block;
     }
     li a:hover {
-      color: #0066cc;
+      color: #0077e6;
+    }
+
+    footer {
+      background: #002244;
+      color: #d0e0ff;
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 1.1rem;
+      margin-top: auto;
+    }
+    footer a {
+      color: #66aaff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    footer a:hover {
       text-decoration: underline;
     }
 
-    /* Footer - sticks to bottom */
-    footer {
-      background: #003366;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.95rem;
-      margin-top: auto;           /* Pushes it to end in flex column */
-    }
-    footer a {
-      color: #66ccff;
-      text-decoration: none;
-    }
-
-    /* Mobile adjustments */
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       .columns {
         flex-direction: column;
+        gap: 40px;
       }
-      header { padding: 70px 15px 50px; }
-      header h1 { font-size: 2.2rem; }
-      .column { padding: 30px 20px; }
+      header { padding: 100px 20px 70px; }
+      header h1 { font-size: 2.8rem; }
+      .column { padding: 40px 30px; }
     }
   </style>
 </head>
@@ -137,7 +143,7 @@
         <h2>Newsletters</h2>
         <ul>
           <li><a href="newsletter/IDWALA.pdf" target="_blank">March 2026 Newsletter (PDF)</a></li>
-          <!-- Add more as needed -->
+          <!-- Add more items here -->
         </ul>
       </div>
 
@@ -145,8 +151,7 @@
         <h2>Job Listings</h2>
         <ul>
           <li><a href="jobs/Vacancy - Contracts Manager 2026.pdf" target="_blank">Contracts Manager (PG8)</a></li>
-          
-          <!-- Add more as needed -->
+          <!-- Add more items here -->
         </ul>
       </div>
     </div>
