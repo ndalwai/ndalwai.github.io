@@ -5,16 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Idwala Lime Distributors - Newsletters & Job Listings</title>
   <style>
-    /* Reset and base styles */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* Key sticky footer setup */
+    html, body {
+      height: 100%;               /* Full height for flex to work */
+      margin: 0;                  /* Remove default margins */
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f8f9fa;
       color: #333;
       line-height: 1.6;
+      display: flex;              /* Flex column for entire page */
+      flex-direction: column;     /* Stack header → main → footer */
     }
 
-    /* Header / Hero */
+    /* Header / Hero - no changes needed here */
     header {
       background: linear-gradient(rgba(0, 0, 50, 0.7), rgba(0, 0, 50, 0.7)), url('https://images.unsplash.com/photo-1581092160560-1c1e428e9d65?auto=format&fit=crop&q=80') center/cover no-repeat;
       color: white;
@@ -34,25 +39,25 @@
       opacity: 0.9;
     }
 
-    /* Main container */
+    /* Main content grows to fill space */
     .container {
       max-width: 1200px;
       margin: -60px auto 60px;
       padding: 0 20px;
+      flex: 1;                    /* This pushes footer down! */
     }
 
     /* Two-column flex wrapper */
     .columns {
       display: flex;
-      flex-wrap: wrap;          /* Allows stacking on small screens */
-      gap: 30px;                /* Space between columns */
+      flex-wrap: wrap;
+      gap: 30px;
       margin-bottom: 40px;
     }
 
-    /* Individual section (column) */
     .column {
-      flex: 1;                  /* Each takes equal space */
-      min-width: 300px;         /* Prevents columns from getting too narrow */
+      flex: 1;
+      min-width: 300px;
       background: white;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -67,7 +72,6 @@
       padding-bottom: 12px;
     }
 
-    /* List styles */
     ul {
       list-style: none;
     }
@@ -94,20 +98,21 @@
       text-decoration: underline;
     }
 
-    /* Footer */
+    /* Footer - sticks to bottom */
     footer {
       background: #003366;
       color: white;
       text-align: center;
       padding: 30px 20px;
       font-size: 0.95rem;
+      margin-top: auto;           /* Pushes it to end in flex column */
     }
     footer a {
       color: #66ccff;
       text-decoration: none;
     }
 
-    /* Mobile: stack columns vertically */
+    /* Mobile adjustments */
     @media (max-width: 768px) {
       .columns {
         flex-direction: column;
@@ -132,7 +137,7 @@
         <h2>Newsletters</h2>
         <ul>
           <li><a href="newsletter/IDWALA.pdf" target="_blank">March 2026 Newsletter (PDF)</a></li>
-          <!-- Add more <li> here as needed -->
+          <!-- Add more as needed -->
         </ul>
       </div>
 
@@ -140,7 +145,7 @@
         <h2>Job Listings</h2>
         <ul>
           <li><a href="jobs/Vacancy - Contracts Manager 2026.pdf" target="_blank">Contracts Manager (PG8)</a></li>
-          <!-- Add more <li> here as needed -->
+          <!-- Add more as needed -->
         </ul>
       </div>
     </div>
@@ -148,7 +153,7 @@
   </div>
 
   <footer>
-    <p>© 2026 Idwala Lime Distributors (Pty) Ltd | Danielskuil, Northern Cape | Part of Idwala Industrial Holdings</p>
+    <p>&copy; 2026 Idwala Lime Distributors (Pty) Ltd | Danielskuil, Northern Cape | Part of Idwala Industrial Holdings</p>
     <p><a href="https://www.idwala.co.za/" target="_blank">Visit Main Website</a></p>
   </footer>
 
